@@ -204,7 +204,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) or (max-height: 50px) {
   .xyz{
     max-width: 100px;
     word-wrap: break-word;
