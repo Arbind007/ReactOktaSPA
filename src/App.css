@@ -1,38 +1,169 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+  color: #0c1844;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fff5e1;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ff7c7c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 50px;
+  word-wrap: break-word;
+  margin-bottom: 50px;
+}
+
+.container2 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #0c1844;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 50px;
+  word-wrap: break-word;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container2 h1{
+  color: white;
+  font-weight: 400;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container2 h2{
+  color: white;
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.container3 {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 50px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+button {
+  background-color: #0c1844;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+}
+
+.token-info, .user-info {
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  margin: 5px 0;
+}
+
+.cntr{
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.oppBtn{
+  background-color: white;
+  color: #0c1844; 
+}
+
+.oppBtn:hover {
+  background-color: #0c1844;
+  color: white; 
+}
+
+.oppBtn2{
+  background-color: white;
+  color: #0c1844; 
+}
+
+.oppBtn2:hover {
+  background-color: #0056b3;
+  color: white; 
+}
+
+.login{
+  color: #ff7c7c;
+}
+
+
+.styleTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  
+}
+
+#smallTable {
+  width: 90%;
+  word-wrap: break-word;
+}
+
+.styleTable thead tr {
+  background-color: #ff7c7c;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styleTable th,
+.styleTable td {
+  padding: 12px 15px;
+}
+
+.styleTable th {
+  padding: 12px 15px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.styleTable tbody tr {
+  border-bottom: 1px solid #dddddd;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.styleTable tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styleTable tbody tr:hover {
+  background-color: #ffd0d0;
+  cursor: pointer;
+}
+
+.xyz{
+  max-width: 530px;
+  word-wrap: break-word;
+  overflow-x: auto;
 }
