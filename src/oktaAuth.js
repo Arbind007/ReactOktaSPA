@@ -4,7 +4,7 @@ var config = {
   issuer: 'https://dev-75519399.okta.com/oauth2/default',
   clientId: '0oahrhqj0yoMuXEo15d7',
   redirectUri: window.location.origin + '/login/callback',
-  scopes: ['openid', 'profile', 'email', 'address', 'phone'],
+  scopes: ['openid', 'profile', 'email', 'address', 'phone','offline_access'],
   tokenManager: {
       storage: 'localStorage',
   },
