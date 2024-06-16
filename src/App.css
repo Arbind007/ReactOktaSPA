@@ -175,7 +175,7 @@ button:hover {
   margin-left: 78%;
 }
 
-@media screen and (max-width: 900px) and (min-width: 300px) {
+@media screen and (max-width: 900px) and (min-width: 400px) {
   .xyz{
     max-width: 200px;
     word-wrap: break-word;
@@ -207,7 +207,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 300px){
+@media screen and (max-width: 400px){
   .xyz{
     max-width: 100px;
     word-wrap: break-word;
