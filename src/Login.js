@@ -1,5 +1,6 @@
 import React from 'react';
 import { useOktaAuth } from '@okta/okta-react';
+import oktaImg from './Okta.png'
 
 const Login = () => {
   const { oktaAuth } = useOktaAuth();
@@ -11,6 +12,7 @@ const Login = () => {
   return (
     <div>
     <div className="container" style={{marginTop:"5%"}}>
+      <img src={oktaImg} width="50%" alt='oktaImage' style={{marginLeft:'25%'}}/>
       <div className='container3' style={{textAlign:'center'}}>
         Click the below button to begin the Okta initiated OAuth 2.0 Authorization + refresh token for SPA application
       </div>
