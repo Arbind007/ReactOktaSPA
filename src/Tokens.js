@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 import { jwtDecode } from 'jwt-decode';
 import { Link } from 'react-router-dom';
 
 const Tokens = () => {
   const { oktaAuth, authState } = useOktaAuth();
-
+  const [expiredTokenMessage, setExpiredTokenMessage] = useState('');
+  
   if (!authState || !authState.isAuthenticated) {
     return <div className="loading">Loading...</div>;
   }
 
   const idToken = oktaAuth.tokenManager.getSync('idToken')?.idToken;
   const accessToken = oktaAuth.tokenManager.getSync('accessToken')?.accessToken;
-
+  
   if (!idToken || !accessToken) {
     return <div className="loading">Tokens not available</div>;
   }
@@ -21,6 +22,18 @@ const Tokens = () => {
   const decodedIdTokenHeader = jwtDecode(idToken, { header: true });
   const decodedAccessToken = jwtDecode(accessToken);
   const decodedAccessTokenHeader = jwtDecode(accessToken, { header: true });
+
+  const handleExpiredToken = async () => {
+    try {
+      await oktaAuth.token.getWithRedirect({
+        scopes: ['openid', 'profile', 'email', 'address', 'phone','offline_access'],
+        responseType: ['id_token', 'token']
+      });
+    } catch (err) {
+      setExpiredTokenMessage('Failed to refresh tokens. Please login again.');
+      console.error('Failed to refresh tokens:', err);
+    }
+  };
 
   const renderTokenInfo = (info) => {
     return Object.entries(info).map(([key, value]) => {
@@ -110,6 +123,8 @@ const Tokens = () => {
         </div>
       </div>
       <div className='cntr'>
+      {expiredTokenMessage && <p className="error-message">{expiredTokenMessage}</p>}
+      <button onClick={handleExpiredToken}>Use Refresh Tokens</button>
       <Link to="/"> <button type="button"> Go Back </button> </Link>
       </div>
     </div>

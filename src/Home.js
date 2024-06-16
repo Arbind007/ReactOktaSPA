@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { oktaAuth, authState } = useOktaAuth();
-  const [tokens, setTokens] = useState({ idToken: null, accessToken: null });
+  const [tokens, setTokens] = useState({ idToken: null, accessToken: null, refreshToken: null });
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
@@ -14,9 +14,11 @@ const Home = () => {
         try {
           const idToken = await oktaAuth.tokenManager.get('idToken');
           const accessToken = await oktaAuth.tokenManager.get('accessToken');
+          const refreshToken = await oktaAuth.tokenManager.get('refreshToken');
           setTokens({
             idToken: idToken?.idToken,
             accessToken: accessToken?.accessToken,
+            refreshToken: refreshToken?.refreshToken,
           });
           const userInfo = await oktaAuth.token.getUserInfo(accessToken, idToken);
           setUserInfo(userInfo);
@@ -69,6 +71,7 @@ const Home = () => {
         <div className="token-info">
           <p><strong>ID Token:</strong> {tokens.idToken}</p>
           <p><strong>Access Token:</strong> {tokens.accessToken}</p>
+          <p><strong>Refresh Token:</strong><br/> {tokens.refreshToken}</p>
         </div>
       </div>
       {userInfo && (
