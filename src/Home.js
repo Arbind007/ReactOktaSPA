@@ -46,7 +46,7 @@ const Home = () => {
       return (
         <tr>
           <td><strong>{key}:</strong></td> 
-          <td className=''>{displayValue}</td>
+          <td className='xyz'>{displayValue}</td>
         </tr>
       );
     });

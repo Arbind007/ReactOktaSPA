@@ -167,3 +167,39 @@ button:hover {
   word-wrap: break-word;
   overflow-x: auto;
 }
+
+#testCred{
+  background-color: #fff;
+  margin-top: 13%;
+  width: 16.5%;
+  margin-left: 78%;
+}
+
+@media screen and (max-width: 700px) {
+  .xyz{
+    max-width: 200px;
+    word-wrap: break-word;
+    overflow-x: auto;
+  }
+  #testCred{
+    width: 46.5%;
+    margin-top: 30%;
+    margin-left: 43%;
+  }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 900px) {
+  #testCred{
+    width: 40.5%;
+    margin-top: 9%;
+    margin-left: 53%;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 700px) {
+  #testCred{
+    width: 40.5%;
+    margin-top: 20%;
+    margin-left: 53%;
+  }
+}
