@@ -35,7 +35,7 @@ const Tokens = () => {
 
       return (
         <tr>
-          <td><strong>{key}:</strong></td> 
+          <td className='abc'><strong>{key}:</strong></td> 
           <td className='xyz'>{displayValue}</td>
         </tr>
       );

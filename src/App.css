@@ -208,8 +208,13 @@ button:hover {
 }
 
 @media screen and (max-width: 400px){
+  .abc{
+    max-width: 30%;
+    word-wrap: break-word;
+    overflow-x: auto;
+  }
   .xyz{
-    max-width: 80px;
+    max-width: 40%;
     word-wrap: break-word;
     overflow-x: auto;
   }
