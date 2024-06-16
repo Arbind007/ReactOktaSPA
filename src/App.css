@@ -209,12 +209,12 @@ button:hover {
 
 @media screen and (max-width: 400px){
   .abc{
-    max-width: 30%;
+    max-width: 60px;
     word-wrap: break-word;
     overflow-x: auto;
   }
   .xyz{
-    max-width: 40%;
+    max-width: 120px;
     word-wrap: break-word;
     overflow-x: auto;
   }
