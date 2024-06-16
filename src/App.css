@@ -203,3 +203,11 @@ button:hover {
     margin-left: 53%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .xyz{
+    max-width: 100px;
+    word-wrap: break-word;
+    overflow-x: auto;
+  }
+}
