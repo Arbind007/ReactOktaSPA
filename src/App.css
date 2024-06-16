@@ -175,12 +175,15 @@ button:hover {
   margin-left: 78%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .xyz{
     max-width: 200px;
     word-wrap: break-word;
     overflow-x: auto;
   }
+}
+
+@media screen and (max-width: 700px) {
   #testCred{
     width: 46.5%;
     margin-top: 30%;
@@ -203,13 +206,3 @@ button:hover {
     margin-left: 53%;
   }
 }
-
-@media screen and (max-width: 600px){
-  .xyz{
-    max-width: 100px;
-    word-wrap: break-word;
-    overflow-x: auto;
-  }
-}
-
-
