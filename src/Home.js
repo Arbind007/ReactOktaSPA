@@ -78,7 +78,7 @@ const Home = () => {
         <div className='container3'>
           <div className="user-info">
             <h2>User Info</h2>
-            <table class="styleTable">
+            <table className="styleTable">
               <thead>
                 <tr>
                   <th> Attribute </th>
@@ -94,9 +94,10 @@ const Home = () => {
         </div>
       )}
       <br/>
-      <div className='cntr'>
-          <Link to="/tokens"> <button className='oppBtn' type="button"> View Decoded Tokens </button> </Link>
-          <button onClick={logout}>Logout</button>
+      <Link to="/tokens"> <button className='oppBtn' type="button"> View Decoded Tokens </button> </Link>
+      <Link to="/userinfo"> <button className='oppBtn' type="button"> User Info </button> </Link>
+      <div className='cntr' style={{marginTop:'-35.5px'}}>
+          <button  onClick={logout}>Logout</button>
       </div>
       
     </div>

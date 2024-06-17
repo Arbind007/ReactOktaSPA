@@ -7,6 +7,7 @@ import Login from './Login';
 import Tokens from './Tokens';
 import ErrorPage from './ErrorPage';
 import oktaAuth from './oktaAuth';
+import UserInfo from './UserInfo';
 import './App.css'
 
 const AppWraper = () => {
@@ -20,7 +21,9 @@ const AppWraper = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/login/callback" element={<LoginCallback />} />
+          <Route path="/userinfo" element={<UserInfo />} />
           <Route path="/tokens" element={<Tokens />} />
+          
           <Route path="*" element={<ErrorPage message="Page not found" />} />
         </Routes>
       </Security>

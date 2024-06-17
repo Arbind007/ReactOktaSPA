@@ -64,7 +64,7 @@ const Tokens = () => {
         <div className='container3' >
           <h2 style={{textAlign:"center"}}> Decoded ID Token</h2>
           <h3>Decoded ID Token Header</h3>
-          <table class="styleTable">
+          <table className="styleTable">
               <thead>
                 <tr>
                   <th> Attribute </th>
@@ -78,7 +78,7 @@ const Tokens = () => {
           <br/>
 
           <h3>Decoded ID Token Payload</h3>
-          <table  class="styleTable">
+          <table  className="styleTable">
               <thead>
                 <tr>
                   <th> Attribute </th>
@@ -95,7 +95,7 @@ const Tokens = () => {
         <div className='container3' >
           <h2 style={{textAlign:"center"}}> Decoded Access Token</h2>
           <h3>Decoded Access Token Header</h3>
-          <table class="styleTable">
+          <table className="styleTable">
               <thead>
                 <tr>
                   <th> Attribute </th>
@@ -109,7 +109,7 @@ const Tokens = () => {
           <br/>
           
           <h3>Decoded Access Token Payload</h3>
-          <table class="styleTable">
+          <table className="styleTable">
               <thead>
                 <tr>
                   <th> Attribute </th>
