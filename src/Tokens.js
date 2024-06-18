@@ -13,7 +13,7 @@ const Tokens = () => {
 
   const idToken = oktaAuth.tokenManager.getSync('idToken')?.idToken;
   const accessToken = oktaAuth.tokenManager.getSync('accessToken')?.accessToken;
-  
+  const refreshToken = oktaAuth.tokenManager.getSync('refreshToken')?.refreshToken;
   if (!idToken || !accessToken) {
     return <div className="loading">Tokens not available</div>;
   }
@@ -22,6 +22,7 @@ const Tokens = () => {
   const decodedIdTokenHeader = jwtDecode(idToken, { header: true });
   const decodedAccessToken = jwtDecode(accessToken);
   const decodedAccessTokenHeader = jwtDecode(accessToken, { header: true });
+  
 
   const handleExpiredToken = async () => {
     try {
@@ -120,11 +121,15 @@ const Tokens = () => {
                 {renderTokenInfo(decodedAccessToken)}
               </tbody>
           </table>
+          <div style={{marginTop:'40px'}}>
+              <h3 >Refresh Token</h3>
+              {refreshToken}
+          </div>
         </div>
       </div>
       <div className='cntr'>
       {expiredTokenMessage && <p className="error-message">{expiredTokenMessage}</p>}
-      <button onClick={handleExpiredToken}>Use Refresh Tokens</button>
+      <button onClick={handleExpiredToken}>Refresh Expired Tokens</button>
       <Link to="/"> <button type="button"> Go Back </button> </Link>
       </div>
     </div>

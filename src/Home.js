@@ -30,6 +30,21 @@ const Home = () => {
     }
   }, [authState, oktaAuth]);
 
+  const useRefreshToken = async () => {
+    try {
+      const newTokens = await oktaAuth.tokenManager.renew('accessToken');
+      setTokens({
+        idToken: newTokens.idToken?.idToken,
+        accessToken: newTokens.accessToken?.accessToken,
+        refreshToken: newTokens.refreshToken?.refreshToken, 
+      });
+    } catch (err) {
+      console.error('Failed to renew tokens:', err);
+      await oktaAuth.signOut();
+    }
+  };
+
+
   const logout = async () => {
     await oktaAuth.signOut();
   };
@@ -94,9 +109,12 @@ const Home = () => {
         </div>
       )}
       <br/>
-      <Link to="/tokens"> <button className='oppBtn' type="button"> View Decoded Tokens </button> </Link>
-      <Link to="/userinfo"> <button className='oppBtn' type="button"> User Info </button> </Link>
-      <div className='cntr' style={{marginTop:'-35.5px'}}>
+      <div className='cntr3'>
+          <Link to="/tokens"> <button className='oppBtn' type="button"> View Decoded Tokens </button> </Link> 
+          <Link to="/userinfo"> <button className='oppBtn' type="button"> User Info </button> </Link>
+      </div>
+      <div className='cntr2' >
+          <button onClick={useRefreshToken} style={{marginRight:'0.5%'}}>Use Refresh Token</button> 
           <button  onClick={logout}>Logout</button>
       </div>
       
